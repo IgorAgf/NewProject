@@ -49,5 +49,4 @@ if (personalMovieDB.count < 10) {
     } else { alert('Вы киноман!') }
 }
 
-
 console.log(personalMovieDB);
