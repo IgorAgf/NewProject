@@ -1,7 +1,7 @@
 'use strict'
 
 const personalMovieDB = {
-    count: numberofFilms,
+    numberofFilms: '',
     movies: {},
     actors: {},
     genres: [],
@@ -38,10 +38,13 @@ const personalMovieDB = {
             console.log(personalMovieDB);
         }
     },
-    writeYourGenres() {
+    writeYourGenres(a) {
         let i = 0;
         do {
-            personalMovieDB.genres[i] = prompt('Ваш любимый жанр под номером' + (i + 1) + '?', 'Комедия');
+            a[i] = +prompt('Ваш любимый жанр под номером' + (i + 1) + '?', '');
+            while (a[i] == '' || a[i] == null || isNaN(a[i])) {
+                a[i] = +prompt('Ваш любимый жанр под номером' + (i + 1) + '?', '');
+            }
             i++;
         } while (i < 3);
     },
@@ -53,3 +56,4 @@ const personalMovieDB = {
         }
     }
 }
+personalMovieDB.writeYourGenres(personalMovieDB.genres);
