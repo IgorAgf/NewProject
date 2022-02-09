@@ -42,10 +42,10 @@ const personalMovieDB = {
         let i = 0;
         do {
             a[i] = +prompt('Ваш любимый жанр под номером' + (i + 1) + '?', '');
-            while (a[i] == '' || a[i] == null || isNaN(a[i])) {
-                a[i] = +prompt('Ваш любимый жанр под номером' + (i + 1) + '?', '');
+            if (a[i] != '' || a[i] != null) {
+                i++;
             }
-            i++;
+
         } while (i < 3);
     },
     toggleVisibleMyDB(logic) {
